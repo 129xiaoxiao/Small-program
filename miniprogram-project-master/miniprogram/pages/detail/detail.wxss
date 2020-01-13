@@ -1,0 +1,182 @@
+/* miniprogram/pages/detail/detail.wxss */
+.detail {
+  font-size: 32rpx;
+  padding: 30rpx;
+}
+.title {
+  font-size: 36rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.poet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+}
+.poet>view {
+  padding: 10rpx 20rpx;
+}
+.poet>view.name {
+  color: #2673db;
+}
+.poet view text {
+  color: #666;
+}
+.poem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+}
+.poem text {
+  line-height: 1.6;
+  font-size: 32rpx;
+}
+.tags {
+  text-align: center;
+}
+.tags text {
+  display: inline-block;
+  border: 1px solid #ddd;
+  color: #777;
+  margin: 10rpx;
+  padding: 4rpx 20rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+
+.more {
+  margin-top: 50rpx;
+}
+
+.tab {
+  float: left;
+  width: 33.3333%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.topTabSwiper {
+  border-bottom: 1px solid #ccc;
+  zoom: 1;
+}
+
+.topTabSwiper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.tabBorer {
+  border-bottom: 1px solid #f00;
+  color: #f00;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.itembox {
+  width: 100%;
+  padding: 40rpx 0;
+}
+.itembox view {
+  margin-bottom: 20rpx;
+}
+.itembox {
+  display: none
+}
+.showItem {
+  display: block;
+}
+
+
+.collect {
+  height: 120rpx;
+  width: 120rpx;
+  position: fixed;
+  bottom: 30rpx;
+  right: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  background: rgba(0, 0, 0, .6);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.collect image {
+  height: 50rpx;
+  width: 50rpx;
+}
+.collect text {
+  color: #fff;
+}
+
+.collect button {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.1;
+}
+
+
+.share {
+  height: 120rpx;
+  width: 120rpx;
+  position: fixed;
+  bottom: 170rpx;
+  right: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  background: rgba(0, 0, 0, .6);
+  border-radius: 50%;
+  z-index: 10;
+}
+.share image {
+  height: 70rpx;
+  width: 70rpx;
+}
+.share text {
+  color: #fff;
+}
+
+.share button {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.1;
+  z-index: 99;
+}
+
+.backhome {
+  height: 110rpx;
+  width: 110rpx;
+  position: fixed;
+  top: 10rpx;
+  right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  background: rgba(255, 255, 255, .4);
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px #bbb;
+  z-index: 10;
+}
+.backhome image {
+  height: 50rpx;
+  width: 50rpx;
+}
+.backhome text {
+  color: #666;
+  font-size: 20rpx;
+}
+

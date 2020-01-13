@@ -1,0 +1,59 @@
+<!-- miniprogram/pages/detail/detail.wxml -->
+<view class='detail' wx:if='{{isExist && isDown}}'>
+  <view class='title'>{{detail.name}}</view>
+  <view class="poet">
+    <view>{{detail.dynasty}}</view>
+    <view class="name" data-poet='{{detail.poet}}' bindtap='goPoet' >{{detail.poet}}</view>
+  </view>
+  <view class="poem">
+    <text wx:for='{{detail.content}}' wx:key='{{index}}'>{{item}}</text>
+  </view>
+  <view class="tags">
+    <text wx:for='{{detail.tags}}' wx:key='{{index}}' data-parenttags='标签' data-tags='{{item}}' bindtap='goList'>{{item}}</text>
+  </view>
+  <view class="more">
+    <view class='topTabSwiper'>
+      <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>
+        译文
+      </view>
+      <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>
+        注释
+      </view>
+      <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>
+        赏析
+      </view>
+    </view>
+    <view class='swiper'>
+      <view class='itembox {{currentData == 0 ? "showItem" : ""}}'>
+        <view wx:for='{{detail.yiwen}}' wx:key='{{index}}'>{{item}}</view>
+        <view wx:if='{{!detail.yiwen.length}}'>暂无译文</view>
+      </view>
+      <view class='itembox {{currentData == 1 ? "showItem" : ""}}'>
+        <view wx:for='{{detail.zhushi}}' wx:key='{{index}}'>{{item}}</view>
+        <view wx:if='{{!detail.zhushi.length}}'>暂无注释</view>
+      </view>
+      <view class='itembox {{currentData == 2 ? "showItem" : ""}}'>
+        <view wx:for='{{detail.shangxi}}' wx:key='{{index}}'>{{item}}</view>
+        <view wx:if='{{!detail.shangxi.length}}'>暂无赏析</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 首页 -->
+<view class='backhome' bindtap='onBackhome'>
+  <image src='/images/nav/index-active.png'></image>
+  <text>回首页</text>
+</view>
+
+<!-- 分享 -->
+<view class='share'>
+  <image src='/images/share.png'></image>
+  <text>分享</text>
+  <button open-type='share'></button>
+</view>
+
+
+<view class='no-list' wx:if="{{!isExist}}" style='text-align:center;font-size:24rpx;padding:30rpx;'>
+  <text style='color:#666;'>--- 未找到 ---</text>
+</view>

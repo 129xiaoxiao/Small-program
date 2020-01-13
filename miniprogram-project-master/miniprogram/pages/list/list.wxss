@@ -1,0 +1,51 @@
+.choiceness {
+  margin: 40rpx 30rpx;
+}
+
+.choiceness .title {
+  font-size: 32rpx;
+  text-align: center;
+  display: block;
+  color: #ff6666;
+}
+
+.choiceness view.box {
+  padding: 30rpx 20rpx;
+  margin-bottom: 24rpx;
+  background: #fff;
+  height: 220rpx;
+  line-height: 1.6;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #333;
+}
+
+.choiceness view.box .poet {
+  text-overflow: -o-ellipsis-lastline;
+  height: 38%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  color: #666;
+}
+
+.choiceness view.box .name-like {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.choiceness view.box .name-like .name {
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.choiceness view.box .name-like .like {
+  font-size: 24rpx;
+  color: #f79b9b;
+}

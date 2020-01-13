@@ -1,0 +1,48 @@
+<!-- index.wxml -->
+<scroll-view scroll-y="true" style='height:100%;' lower-threshold="50" bindscrolltolower="lower">
+  <view class="command">
+    <navigator url="/pages/idiom/idiom" open-type='navigate'>
+      <image class='' src='/images/home/chengyu4.png' mode="aspectFit"></image>
+    </navigator>
+    <navigator url="/pages/menu/menu" open-type='switchTab'>
+      <image class='' src='/images/home/shici4.png'></image>
+    </navigator>
+    <navigator url="/pages/baijiaxing/baijiaxing" open-type='navigate'>
+      <image class='' src='/images/home/baijiaxing4.png'></image>
+    </navigator>
+    <navigator url="/pages/xiehouyu/xiehouyu" open-type='navigate'>
+      <image class='' src='/images/home/xiehouyu4.png'></image>
+    </navigator>
+    <navigator url="/pages/miyu/miyu" open-type='navigate'>
+      <image class='' src='/images/home/miyu4.png'></image>
+    </navigator>
+  </view>
+  <view class="sentence">
+    <text class="title">每日一句</text>
+    <view wx:if="{{sentence._id}}" data-id='{{sentence._id}}' bindtap='goDetail'>
+      <text class="poet">{{sentence.cont}}</text>
+      <text class="name">{{sentence.name}} - {{sentence.dynasty}} {{sentence.poet}}</text>
+    </view>
+    <view wx:if="{{!sentence._id}}" style='text-align:center;'>
+      <image class='' src='/images/loading/loading-bars.svg' style='height: 60px;'></image>
+    </view>
+  </view>
+  <view class="choiceness">
+    <text class="title">诗词精选</text>
+    <view class='box' wx:for='{{list}}' wx:key='{{index}}' data-id='{{item._id}}' bindtap='goDetail'>
+      <text class="poet">{{item.content[0]}}{{item.content[1]}}</text>
+      <view class="name-like">
+        <text class="name">{{item.name}} - {{item.dynasty}} {{item.poet}}</text>
+        <view class="like">
+          <text>{{item.opened}} 人浏览</text>
+        </view>
+      </view>
+    </view>
+    <view class='box loading' wx:if="{{loading}}" style='text-align:center;'>
+      <image class='' src='/images/loading/loading-bars.svg' style='height: 60px;'></image>
+    </view>
+    <view class='bottom' wx:if="{{isOver}}" style='text-align:center;font-size:24rpx;padding:30rpx;'>
+      <text style='color:#666;'>--- 我是有底线的 ---</text>
+    </view>
+  </view>
+</scroll-view>
